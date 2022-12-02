@@ -1,0 +1,100 @@
+{% load static %}
+<html>
+<head>
+<title>Forensic Evidence Management</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" media="screen" />
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Enter Record ID");
+	formObj.t1.focus();
+	return false;
+	}
+	if(formObj.t2.value.length==0)
+	{
+	alert("Please Enter Crime Type");
+	formObj.t2.focus();
+	return false;
+	}
+	if(formObj.t3.value.length==0)
+	{
+	alert("Please Enter Crime Description");
+	formObj.t3.focus();
+	return false;
+	}
+	if(formObj.t4.value.length==0)
+	{
+	alert("Please Enter Evidence Details");
+	formObj.t4.focus();
+	return false;
+	}
+	if(formObj.t5.value.length==0)
+	{
+	alert("Please Enter Crime Area");
+	formObj.t5.focus();
+	return false;
+	}
+	if(formObj.t6.value.length==0)
+	{
+	alert("Please Enter Eye Wintnesses details");
+	formObj.t6.focus();
+	return false;
+	}
+	return true;
+	}
+	</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1>An Implementation of Blockchain Technology in
+Forensic Evidence Management</h1>
+		</div>
+		<div id="slogan">
+			
+		</div>
+	</div>
+	<div id="menu">
+		<ul>
+      <li><a href="{% url 'AddEvidence' %}">Add Evidences to Blockchain</a></li>
+      <li><a href="{% url 'ViewEvidence' %}">Fetch Evidences from Blockchain</a></li>
+       <li><a href="{% url 'index' %}">Logout</a></li>
+   </ul>				<br class="clearfix" />
+				</div>
+			
+	<div id="splash">
+		<img class="pic" src="{% static 'images/investor.JPG' %}" width="870" height="230" alt="" />
+	</div>	
+			<center>
+<form name="f1" method="post" action="{% url 'AddEvidenceAction' %}" onsubmit="return validate(this);">
+{% csrf_token %}<br/>
+   <h2><b>Evidence Collection Screen</b></h2>
+
+   <center><font face="verdana" color="red">{{ data }}</font></center>
+   
+					
+						<table align="center" width="40" >
+						 <tr><td><font size="" color="black">Record&nbsp;ID</b></td><td><input type="text" name="t1" size="15" style="font-family: Comic Sans MS" /></td></tr>
+
+			 <tr><td><font size="" color="black">Crime&nbsp;Type</b></td><td><input type="text" name="t2" size="25" style="font-family: Comic Sans MS" /></td></tr>
+         
+		  <tr><td><font size="" color="black">Crime&nbsp;Description</b></td><td><input type="text" name="t3" size="50" style="font-family: Comic Sans MS" /></td></tr>
+
+		 <tr><td><font size="" color="black">Collected&nbsp;Evidence&nbsp;Details</b></td><td><input type="text" name="t4" size="80" style="font-family: Comic Sans MS" /></td></tr>
+
+		  <tr><td><font size="" color="black">Crime&nbsp;Area</b></td><td><input type="text" name="t5" size="30" style="font-family: Comic Sans MS" /></td></tr>
+
+		   <tr><td><font size="" color="black">Eye&nbsp;Witnesses</b></td><td><input type="text" name="t6" size="80" style="font-family: Comic Sans MS" /></td></tr>
+		
+			<tr><td></td><td><input type="submit" value="Submit"></td>
+			</table>
+				</div>	<br/><br/><br/><br/><br/>
+					
+				</div>
+				
+	</body>
+</html>
