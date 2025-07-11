@@ -58,5 +58,3 @@ The system allows investigators to upload, track, and retrieve digital files whi
 
 ---
 
-## 📁 Project Structure (Key Files)
-
